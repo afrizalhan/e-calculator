@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<body>
+    <!-- <h2 class="title">E-Calculator</h2>
+    <p style="text-align: center; color: white; font-weight:normal;">Made with Javascript, and love.</p> -->
+    <div class="container">
+        <form name="calculatorForm">
+            <p class="holder" name="holder"></p>
+            <div class="resultscreen">
+                <input type="text" name="evalresult"/ value="0" disabled>
+            </div>
+            <div class="buttons">
+                <div class="row">
+                    <input type="button" name="btnac" class="btn ac" id="btnac" value="AC" onClick="valuecal(btnac.value)"/>
+                    <input type="button" name="btnpercent" class="btn percent"  value="%" onClick="calculatePercent()"/>
+                </div>
+                <div class="row">
+                    <input type="button" name="btn7" value="7" class="btn number" onClick="valuecal(btn7.value)"/>
+                    <input type="button" name="btn8" value="8" class="btn number" onClick="valuecal(btn8.value)"/>
+                    <input type="button" name="btn9" value="9" class="btn number" onClick="valuecal(btn9.value)"/>
+                    <input type="button" name="btndivision" class="btn operate" value="/" onClick="valuecal(btndivision.value)"/>
+                </div>
+                
+                <div class="row">
+                    <input type="button" name="btn4" value="4" class="btn number" onClick="valuecal(btn4.value)"/>
+                    <input type="button" name="btn5" value="5" class="btn number" onClick="valuecal(btn5.value)"/>
+                    <input type="button" name="btn6" value="6" class="btn number" onClick="valuecal(btn6.value)"/>
+                    <input type="button" name="btnmultiply" class="btn operate" value="*" onClick="valuecal(btnmultiply.value)"/>
+                </div>
+                
+                <div class="row">
+                    <input type="button" name="btn1" value="1" class="btn number" onClick="valuecal(btn1.value)"/>
+                    <input type="button" name="btn2" value="2" class="btn number" onClick="valuecal(btn2.value)"/>
+                    <input type="button" name="btn3" value="3" class="btn number" onClick="valuecal(btn3.value)"/>
+                    <input type="button" name="btnsubtract" value="-" class="btn operate" onClick="valuecal(btnsubtract.value)"/>
+                </div>
+                
+                <div class="row">
+                    <input type="button" name="btnDot" value="." class="btn dot" onClick="valuecal(btnDot.value)" style="font-weight: bold;"/>
+                    <input type="button" name="btn0" value="0" class="btn number" onClick="valuecal(btn0.value)"/>
+                    <input type="button" name="btnAddition" value="+" class="btn operate" onClick="valuecal(btnAddition.value)"/>
+                    <input type="button" name="result" value="=" class="btn equals" onClick="getResult()"/>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="space" style="height: 700px;"></div>
+    <script>
+    const operators = document.querySelectorAll(".operate");
+    const holder = document.querySelector(".holder")
+    const screen = calculatorForm.evalresult.value;
+    let resultDisplayed = false;
+    operators.forEach((operator) => {
+        operator.addEventListener("click", function(e){
+            const operation = e.target.value;
+            if (holder.innerHTML == "" || resultDisplayed) {
+                holder.innerHTML = calculatorForm.evalresult.value;
+            } else {
+                holder.innerHTML += calculatorForm.evalresult.value;
+            }
+
+            calculatorForm.evalresult.value = 0
+        });
+    });
+
+    function getResult(){
+        const holder = document.querySelector(".holder");
+        const exp = holder.innerHTML += calculatorForm.evalresult.value;
+        calculatorForm.evalresult.value = eval(exp);
+        resultDisplayed = true;
+    }
+    function valuecal(result){
+        if (calculatorForm.evalresult.value == 0) {
+            calculatorForm.evalresult.value = result; 
+        } else {
+            calculatorForm.evalresult.value = calculatorForm.evalresult.value + result;
+        }
+        if (result == 'AC') {
+            calculatorForm.evalresult.value = 0;
+            holder.innerHTML = "";
+        }
+    }
+    function calculatePercent() {
+        if (calculatorForm.evalresult.value == 0) {
+            alert("Masukkan sebuah angka")
+        } else {
+            let result
+            result = calculatorForm.evalresult.value / 100
+            calculatorForm.evalresult.value = result
+        }
+    }
+    </script>
+</body>
+</html>

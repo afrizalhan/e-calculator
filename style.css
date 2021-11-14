@@ -1,0 +1,96 @@
+*{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    
+}
+body {
+    background: linear-gradient(270deg, #363b50, #6284ff, #ff006a);
+    background-size: 600% 600%;
+    animation: AnimateGradient 11s ease infinite;
+}
+.title{
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+}
+@keyframes AnimateGradient {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    transform: translate(-50%, -50%);
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 30px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding-left: 10px;
+    padding-bottom: 20px;
+    padding-right: 3px;
+}
+
+.heading {
+    text-align: left;
+    font-size: 22px;
+    color: #ffffff;
+    padding: 10px 0 0 10px;
+}
+.resultscreen {
+    height: 110px;
+    width: 100%;
+    position: relative;
+}
+.holder{
+    color: white;
+    font-weight: normal;
+    float: right;
+    margin-right: 25px;
+    margin-top: 25px;
+}
+input[type='text'] {
+    width: 94%;
+    position: absolute;
+    bottom: 0;
+    border: none;
+    text-align: right;
+    font-size: 34px;
+    color: #fafafa;
+    background: transparent;
+}
+.row {
+    width: 300px;
+}
+#btnac{
+    width: 69.8%;
+}
+#btnpercent{
+    width: 20.5%;
+}
+.btn {
+    float: left;
+    font-size: 18px;
+    line-height: 60px;
+    margin: 6px;
+    width: 20.6%;
+    border: none;
+    border-radius: 15px;
+    color: #fafafa;
+    cursor: pointer;
+    outline: none;
+    background: #d32d4b;
+    
+}
+.number{
+    background: #2C2C57;
+}
+.btn[value='='] {
+    background: #2d2d2d;
+    color: #ffffff;
+    border-bottom-right-radius: 5px;
+}
