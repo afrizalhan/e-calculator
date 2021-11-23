@@ -107,3 +107,6 @@ input[type='text'] {
 .btn[value='/']{
     font-size: 25px;
 }
+.btn[value='.']{
+    font-size: 30px;
+}
