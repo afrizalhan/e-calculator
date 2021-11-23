@@ -89,8 +89,21 @@ input[type='text'] {
 .number{
     background: #2C2C57;
 }
-.btn[value='='] {
+.btn[value='=']{
     background: #2d2d2d;
     color: #ffffff;
     border-bottom-right-radius: 5px;
+    font-size: 40px;
+}
+.btn[value='+']{
+    font-size: 40px;
+}
+.btn[value='-']{
+    font-size: 40px;
+}
+.btn[value='*']{
+    font-size: 40px;
+}
+.btn[value='/']{
+    font-size: 25px;
 }
